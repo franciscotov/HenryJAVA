@@ -1,4 +1,4 @@
-package M1C2;
+package M1C2.classes;
 
 public class Product implements  Comparable<Product>{
 
@@ -30,9 +30,16 @@ public class Product implements  Comparable<Product>{
         this.price = price;
     }
 
-
     @Override
     public int compareTo(Product product) {
         return Double.compare(this.price, product.price);
+    }
+
+    @Override
+    public String toString() {
+        return "Product " +
+                "name '" + name + '\'' +
+                ", code #'" + code + '\'' +
+                ", price: $" + price;
     }
 }
