@@ -1,12 +1,13 @@
-package integrativeProject.classes;
+package integrativeProject.entities;
 
-import java.util.Date;
-
-public class Category {
+public class ExpenseCategory {
     private Long id;
     private String name;
 
-    public Category(Long id, String name) {
+    public ExpenseCategory() {
+    }
+
+    public ExpenseCategory(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -25,5 +26,13 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "ExpenseCategory{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

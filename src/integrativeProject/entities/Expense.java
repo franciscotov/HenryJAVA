@@ -1,32 +1,29 @@
-package integrativeProject.classes;
-
-import integrativeProject.classes.Category;
+package integrativeProject.entities;
 
 import java.util.Date;
 
 public class Expense {
 
-    private Long id;
+    public Long id;
     private Float amount;
     private Date date;
-    private Category category;
-
+    private ExpenseCategory expenseCategory;
     public Expense() {
     }
 
-    public Expense(Long id, Float amount, Date date, Category category) {
+    public Expense(Long id, Float amount, Date date, ExpenseCategory expenseCategory) {
         this.id = id;
         this.amount = amount;
         this.date = date;
-        this.category = category;
+        this.expenseCategory = expenseCategory;
     }
 
-    public Category getCategory() {
-        return category;
+    public ExpenseCategory getCategory() {
+        return expenseCategory;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategory(ExpenseCategory expenseCategory) {
+        this.expenseCategory = expenseCategory;
     }
 
     public Long getId() {

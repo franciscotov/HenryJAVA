@@ -1,14 +1,8 @@
 package M1C2.classes;
 
-import M1C2.classes.Product;
-import M1C2.filters.Disposable;
-import M1C2.filters.Imperishable;
-import M1C2.filters.Marketable;
 import M1C2.interfaces.Filtrable;
 
 import java.util.Random;
-import java.util.function.Predicate;
-import java.util.logging.Filter;
 
 public class ProductImpl {
 
