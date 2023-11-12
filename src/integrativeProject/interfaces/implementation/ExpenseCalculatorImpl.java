@@ -25,7 +25,7 @@ public class ExpenseCalculatorImpl implements ExpenseCalculator {
     @Override
     public Float getTotalAmount(Expense[] expenses) {
         Float totalExpense = 0F;
-        for(Expense expense: expenses){
+        for(Expense expense: expenses) {
             totalExpense += expense.getAmount();
         }
         return totalExpense;

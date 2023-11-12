@@ -53,4 +53,14 @@ public class Expense {
     private int counter(){
         return 1;
     }
+
+    @Override
+    public String toString() {
+        return "Expense{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", date=" + date +
+                ", expenseCategory=" + expenseCategory +
+                '}';
+    }
 }
