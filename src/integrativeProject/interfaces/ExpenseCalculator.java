@@ -3,10 +3,12 @@ package integrativeProject.interfaces;
 import integrativeProject.entities.ExpenseCategory;
 import integrativeProject.entities.Expense;
 
+import java.util.List;
+
 public interface ExpenseCalculator {
 
     Float getAmount(Expense expense);
-    Float getAmountByCategory(Expense[] expense, ExpenseCategory category);
+    Float getAmountByCategory(List<Expense> expense, ExpenseCategory category);
 
-    Float getTotalAmount(Expense[] expense);
+    Float getTotalAmount(List<Expense> expense);
 }

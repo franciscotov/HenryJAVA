@@ -4,6 +4,8 @@ import integrativeProject.entities.ExpenseCategory;
 import integrativeProject.entities.Expense;
 import integrativeProject.interfaces.ExpenseCalculator;
 
+import java.util.List;
+
 public class ExpenseCalculatorImpl implements ExpenseCalculator {
 
     @Override
@@ -12,7 +14,7 @@ public class ExpenseCalculatorImpl implements ExpenseCalculator {
     }
 
     @Override
-    public Float getAmountByCategory(Expense[] expenses, ExpenseCategory category) {
+    public Float getAmountByCategory(List<Expense> expenses, ExpenseCategory category) {
         Float totalExpense = 0F;
         for(Expense expense: expenses){
             if(expense.getCategory() != null &&  expense.getCategory().getId() == category.getId()){
@@ -23,7 +25,7 @@ public class ExpenseCalculatorImpl implements ExpenseCalculator {
     }
 
     @Override
-    public Float getTotalAmount(Expense[] expenses) {
+    public Float getTotalAmount(List<Expense> expenses) {
         Float totalExpense = 0F;
         for(Expense expense: expenses) {
             totalExpense += expense.getAmount();

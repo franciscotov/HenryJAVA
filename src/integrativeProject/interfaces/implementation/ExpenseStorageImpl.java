@@ -3,24 +3,24 @@ package integrativeProject.interfaces.implementation;
 import integrativeProject.entities.Expense;
 import integrativeProject.interfaces.ExpenseStorage;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ExpenseStorageImpl implements ExpenseStorage {
 
-    Expense[] expenses = new Expense[100000];
-    private Long index = 1L;
+    List<Expense> expenses = new ArrayList<>();
     @Override
     public void addExpense(Expense expense) {
         System.out.println(expense);
-        this.expenses[this.index.intValue()] = expense;
-        this.index++;
+        expenses.add(expense);
     }
 
-    public Expense[] getExpenses() {
-        return Arrays.copyOfRange(this.expenses, 1, index.intValue());
+    public List<Expense> getExpenses() {
+        return this.expenses;
     }
 
-    public void setExpenses(Expense[] expenses) {
+    public void setExpenses(List<Expense> expenses) {
         this.expenses = expenses;
     }
 }
