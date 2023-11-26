@@ -15,21 +15,19 @@ public class ExpenseCalculatorImpl implements ExpenseCalculator {
 
     @Override
     public Float getAmountByCategory(List<Expense> expenses, ExpenseCategory category) {
-        Float totalExpense = 0F;
-        for(Expense expense: expenses){
-            if(expense.getCategory() != null &&  expense.getCategory().getId() == category.getId()){
-                totalExpense += expense.getAmount();
+        return expenses.stream().reduce((a,b) -> {
+            if(b.getCategory() != null &&  b.getCategory().getId() == category.getId()){
+                a.setAmount(a.getAmount() + b.getAmount());
             }
-        }
-        return totalExpense;
+            return a;
+        }).get().getAmount();
     }
 
     @Override
     public Float getTotalAmount(List<Expense> expenses) {
-        Float totalExpense = 0F;
-        for(Expense expense: expenses) {
-            totalExpense += expense.getAmount();
-        }
-        return totalExpense;
+        return expenses.stream().reduce((a,b) -> {
+            a.setAmount(a.getAmount() + b.getAmount());
+            return a;
+        }).get().getAmount();
     }
 }

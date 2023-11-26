@@ -57,10 +57,11 @@ public class Main {
 
             // Category
             ExpenseCategory category = new ExpenseCategory(categoryId, name);
-            // Expense
+            // Save Expense in the storage and update count category
             try {
                 Expense expense = new Expense(id, amount, dateFormat.parse(dateString), category);
                 expenseStorage.addExpense(expense);
+                expenseStorage.updateCounterCategory(category.getName());
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }
@@ -68,6 +69,10 @@ public class Main {
         } while (expenseQuantity > 0);
 
         Float totalAmount = expenseCalculatorImpl.getTotalAmount(expenseStorage.getExpenses());
-        System.out.println("El total de gastos es: " + totalAmount);
+        System.out.println("the total expense is: " + totalAmount);
+        System.out.println("Those are the entered expeses: ");
+        expenseStorage.printExpenses();
+        System.out.println("Counter by categories: ");
+        expenseStorage.printCounterCategory();
     }
 }
